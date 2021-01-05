@@ -10,11 +10,11 @@ contract('AINCToken', accounts => {
   const _name = 'AnaisINC';
   const _symbol = 'AINC';
   const _decimals = 18;
-  // const _ICO_SUPP = 5000000;
-  // const _Team_SUPP = 2000000;
-  // const _Team="0xb51f73c1c58E02073c04b52D51628FF4a685afe1";
+  const _ICO_SUPP = 5000000;
+  const _Team_SUPP = 2000000;
+  const _Team="0xb51f73c1c58E02073c04b52D51628FF4a685afe1";
   beforeEach(async function () {
-    this.token = await AINCToken.new(_name, _symbol, _decimals);
+    this.token = await AINCToken.new(_name, _symbol, _decimals, _ICO_SUPP, _Team_SUPP, _Team);
   });
 
   describe('token attributes', function() {
@@ -33,4 +33,5 @@ contract('AINCToken', accounts => {
       decimals.should.be.bignumber.equal(_decimals);
     });
   });
+
 });

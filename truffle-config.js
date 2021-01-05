@@ -40,11 +40,12 @@ module.exports = {
     networks: {
       development: {
           host: '127.0.0.1',  // ganache defaults
-          port: 7545,         // ganache defaults
+          port: 9545,         // ganache defaults
           network_id: "*",
           gas: gasLimit,
           gasPrice: gasPrice
       },
+     
       ropsten: {
         provider: function() {
           return new HDWalletProvider(
@@ -57,6 +58,8 @@ module.exports = {
         network_id: 3
       }
   },
+  contracts_directory: './contracts/',
+  contracts_build_directory: './abis/',
 
   // Set default mocha options here, use special reporters etc.
   mocha: {

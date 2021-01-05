@@ -9,11 +9,13 @@ import "@openzeppelin/contracts/token/ERC20/ERC20Pausable.sol";
 
 contract AINCToken is ERC20, ERC20Detailed, ERC20Pausable{
 
-
-    constructor(string memory name, string memory symbol, uint8 decimals)
+    constructor(string memory name, string memory symbol, uint8 decimals, uint ICO_SUPP, uint TEAM_SUPP,
+     address TEAM)
     ERC20Detailed(name, symbol, decimals) public{
 
-        // _mint(msg.sender, ICO_SUPP);
-        // _transfer(msg.sender, TEAM, TEAM_SUPP);
+        _mint(msg.sender, ICO_SUPP);
+        _transfer(msg.sender, TEAM, TEAM_SUPP);
+        // _transfer(msg.sender, ALB, ALB_SUPP);
+
     }
 }
